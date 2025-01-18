@@ -35,7 +35,7 @@
       {
         "domain_suffix": [
           "ions.my.id",
-          "ions.my.id"
+          "ions-do.zidstore.id"
         ],
         "server": "direct-dns",
         "rewrite_ttl": 20
@@ -92,7 +92,7 @@
     {
       "tag": "🇸🇬 tls",
       "type": "vmess",
-      "server": "quiz.int.vidio.com",
+      "server": "quiz.vidio.com",
       "server_port": 443,
       "uuid": "13f55f97-440b-4100-bfd6-0bdca230914f",
       "security": "auto",
@@ -126,7 +126,7 @@
       "type": "vmess",
       "server": "quiz.vidio.com",
       "server_port": 80,
-      "uuid": "13f55f97-440b-4100-bfd6-0bdca230914f",
+      "uuid": "0d43994a-753c-4be9-9a1b-7aec649471b5",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -140,7 +140,7 @@
         "type": "ws",
         "path": "/vmess",
         "headers": {
-          "Host": "ions.my.id"
+          "Host": "ions-do.zidstore.id"
         },
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
