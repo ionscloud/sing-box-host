@@ -92,7 +92,7 @@
     {
       "tag": "🇸🇬 VVIP",
       "type": "vmess",
-      "server": "www.udemy.com",
+      "server": "quiz.vidio.com",
       "server_port": 443,
       "uuid": "65179981-3090-4967-ba89-75b3dff91c63",
       "security": "auto",
@@ -124,7 +124,7 @@
     {
       "tag": "🇸🇬 VIP",
       "type": "vmess",
-      "server": "www.udemy.com",
+      "server": "quiz.vidio.com",
       "server_port": 80,
       "uuid": "65179981-3090-4967-ba89-75b3dff91c63",
       "security": "auto",
