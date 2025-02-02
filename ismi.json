@@ -1,6 +1,6 @@
 {
   "log": {
-    "disabled": false,
+    "disabled": true,
     "level": "warn",
     "timestamp": true
   },
@@ -20,12 +20,6 @@
   },
   "dns": {
     "servers": [
-      {
-        "tag": "Internet-dns",
-        "address": "1.0.0.1",
-        "strategy": "ipv4_only",
-        "detour": "Internet"
-      },
       {
         "tag": "Best Latency-dns",
         "address": "1.1.1.1",
@@ -55,7 +49,7 @@
       {
         "domain_suffix": [
           "idc2.hariyono.my.id",
-          "ions.my.id"
+          "idc2.hariyono.my.id"
         ],
         "server": "direct-dns",
         "rewrite_ttl": 20
@@ -64,11 +58,6 @@
         "network": "udp",
         "port": 443,
         "server": "block-dns",
-        "rewrite_ttl": 20
-      },
-      {
-        "outbound": "Internet",
-        "server": "Internet-dns",
         "rewrite_ttl": 20
       },
       {
@@ -115,30 +104,21 @@
   ],
   "outbounds": [
     {
-      "type": "selector",
-      "tag": "Internet",
-      "outbounds": [
-        "Best Latency",
-        "MIRA_@VVIP",
-        "MIRA_@VIP"
-      ]
-    },
-    {
       "type": "urltest",
       "tag": "Best Latency",
       "outbounds": [
-        "MIRA_@VVIP",
-        "MIRA_@VIP"
+        "🇸🇬 VVIP",
+        "🇸🇬 VIP"
       ],
-      "url": "https://detectportal.firefox.com/success.txt",
+      "url": "http://www.gstatic.com/generate_204",
       "interval": "1m0s"
     },
     {
-      "tag": "MIRA_@VVIP",
+      "tag": "🇸🇬 VVIP",
       "type": "vmess",
       "server": "quiz.vidio.com",
       "server_port": 443,
-      "uuid": "59065083-f29e-4fb6-a06f-18a57eedbb59",
+      "uuid": "b280ae0a-a9e6-4b86-a7ce-896a1685709d",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -156,7 +136,7 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/whatever/vmess",
+        "path": "/vmess",
         "headers": {
           "Host": "idc2.hariyono.my.id"
         },
@@ -166,11 +146,11 @@
       "domain_strategy": "ipv4_only"
     },
     {
-      "tag": "MIRA_@VIP",
+      "tag": "🇸🇬 VIP",
       "type": "vmess",
-      "server": "quiz.int.vidio.com",
+      "server": "quiz.vidio.com",
       "server_port": 80,
-      "uuid": "59065083-f29e-4fb6-a06f-18a57eedbb59",
+      "uuid": "b280ae0a-a9e6-4b86-a7ce-896a1685709d",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -182,9 +162,9 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/whatever/vmess",
+        "path": "/vmess",
         "headers": {
-          "Host": "ions.my.id"
+          "Host": "idc2.hariyono.my.id"
         },
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -207,7 +187,7 @@
   "route": {
     "auto_detect_interface": true,
     "override_android_vpn": true,
-    "final": "Internet",
+    "final": "Best Latency",
     "geoip": {
       "download_url": "https://github.com/malikshi/sing-box-geo/releases/latest/download/geoip.db",
       "download_detour": "Best Latency"
