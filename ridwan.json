@@ -1,6 +1,6 @@
 {
   "log": {
-    "disabled": false,
+    "disabled": true,
     "level": "warn",
     "timestamp": true
   },
@@ -22,15 +22,9 @@
     "servers": [
       {
         "tag": "Internet-dns",
-        "address": "1.0.0.1",
-        "strategy": "ipv4_only",
-        "detour": "Internet"
-      },
-      {
-        "tag": "Best Latency-dns",
         "address": "1.1.1.1",
         "strategy": "ipv4_only",
-        "detour": "Best Latency"
+        "detour": "Internet"
       },
       {
         "tag": "direct-dns",
@@ -54,8 +48,8 @@
       },
       {
         "domain_suffix": [
-          "idc2.hariyono.my.id",
-          "ions.my.id"
+          "hrz.hariyono.my.id",
+          "hrz.hariyono.my.id"
         ],
         "server": "direct-dns",
         "rewrite_ttl": 20
@@ -69,11 +63,6 @@
       {
         "outbound": "Internet",
         "server": "Internet-dns",
-        "rewrite_ttl": 20
-      },
-      {
-        "outbound": "Best Latency",
-        "server": "Best Latency-dns",
         "rewrite_ttl": 20
       },
       {
@@ -115,30 +104,21 @@
   ],
   "outbounds": [
     {
-      "type": "selector",
+      "type": "urltest",
       "tag": "Internet",
       "outbounds": [
-        "Best Latency",
-        "RIDWAN_@VVIP",
-        "RIDWAN_@VIP"
-      ]
-    },
-    {
-      "type": "urltest",
-      "tag": "Best Latency",
-      "outbounds": [
-        "RIDWAN_@VVIP",
-        "RIDWAN_@VIP"
+        "🇮🇩 HERZA",
+        "HERZA 🇮🇩"
       ],
       "url": "https://detectportal.firefox.com/success.txt",
       "interval": "1m0s"
     },
     {
-      "tag": "RIDWAN_@VVIP",
+      "tag": "🇮🇩 HERZA",
       "type": "vmess",
       "server": "quiz.vidio.com",
       "server_port": 443,
-      "uuid": "2727f745-8bb3-439c-9372-d8c3cb217980",
+      "uuid": "e9d9b702-1365-4409-b442-e17179a9882f",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -150,15 +130,15 @@
       },
       "tls": {
         "enabled": true,
-        "server_name": "idc2.hariyono.my.id",
+        "server_name": "hrz.hariyono.my.id",
         "insecure": true,
         "disable_sni": false
       },
       "transport": {
         "type": "ws",
-        "path": "/whatever/vmess",
+        "path": "/vmess",
         "headers": {
-          "Host": "idc2.hariyono.my.id"
+          "Host": "hrz.hariyono.my.id"
         },
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -166,11 +146,11 @@
       "domain_strategy": "ipv4_only"
     },
     {
-      "tag": "RIDWAN_@VIP",
+      "tag": "HERZA 🇮🇩",
       "type": "vmess",
-      "server": "quiz.int.vidio.com",
+      "server": "quiz.vidio.com",
       "server_port": 80,
-      "uuid": "2727f745-8bb3-439c-9372-d8c3cb217980",
+      "uuid": "e9d9b702-1365-4409-b442-e17179a9882f",
       "security": "auto",
       "alter_id": 0,
       "global_padding": false,
@@ -182,9 +162,9 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/whatever/vmess",
+        "path": "/vmess",
         "headers": {
-          "Host": "ions.my.id"
+          "Host": "hrz.hariyono.my.id"
         },
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -210,11 +190,11 @@
     "final": "Internet",
     "geoip": {
       "download_url": "https://github.com/malikshi/sing-box-geo/releases/latest/download/geoip.db",
-      "download_detour": "Best Latency"
+      "download_detour": "Internet"
     },
     "geosite": {
       "download_url": "https://github.com/malikshi/v2ray-rules-dat/releases/latest/download/geosite.db",
-      "download_detour": "Best Latency"
+      "download_detour": "Internet"
     },
     "rules": [
       {
