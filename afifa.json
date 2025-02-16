@@ -34,8 +34,8 @@
       },
       {
         "domain_suffix": [
-          "idc2.hariyono.my.id",
-          "ions.my.id"
+          "hrz.hariyono.my.id",
+          "hrz.hariyono.my.id"
         ],
         "server": "direct-dns",
         "rewrite_ttl": 20
@@ -90,7 +90,7 @@
   ],
   "outbounds": [
     {
-      "tag": "🇸🇬 tls",
+      "tag": "🇮🇩 tls",
       "type": "vmess",
       "server": "quiz.int.vidio.com",
       "server_port": 443,
@@ -106,7 +106,7 @@
       },
       "tls": {
         "enabled": true,
-        "server_name": "idc2.hariyono.my.id",
+        "server_name": "hrz.hariyono.my.id",
         "insecure": true,
         "disable_sni": false
       },
@@ -114,7 +114,7 @@
         "type": "ws",
         "path": "/vmess",
         "headers": {
-          "Host": "idc2.hariyono.my.id"
+          "Host": "hrz.hariyono.my.id"
         },
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -122,7 +122,7 @@
       "domain_strategy": "ipv4_only"
     },
     {
-      "tag": "🇸🇬 non-tls",
+      "tag": "🇮🇩 non-tls",
       "type": "vmess",
       "server": "quiz.vidio.com",
       "server_port": 80,
@@ -140,7 +140,7 @@
         "type": "ws",
         "path": "/vmess",
         "headers": {
-          "Host": "ions.my.id"
+          "Host": "hrz.hariyono.my.id"
         },
         "max_early_data": 0,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -151,8 +151,8 @@
       "type": "urltest",
       "tag": "ions",
       "outbounds": [
-        "🇸🇬 tls",
-        "🇸🇬 non-tls"
+        "🇮🇩 tls",
+        "🇮🇩 non-tls"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "1m0s"
